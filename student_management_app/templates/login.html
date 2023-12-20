@@ -1,0 +1,134 @@
+
+{% load static %} 
+
+{% block content %}
+    
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Student Management System | Dashboard</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="/static/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Tempusdominus Bbootstrap 4 -->
+  <link rel="stylesheet" href="/static/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="/static/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="/static/jqvmap/jqvmap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/static/dist/css/adminlte.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="/static/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="/static/daterangepicker/daterangepicker.css">
+  <!-- summernote -->
+  <link rel="stylesheet" href="/static/summernote/summernote-bs4.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+
+</head>
+
+<body>
+<!-- 
+  <div class="header">
+    <div class="col-md-2 col-md-offset-4"></div>
+   <div class="text-center><Span classs="text-header"><span style ="color:red"><h4>CSE Department</h4></span></div>
+    <div class="row"> -->
+        <!-- Brand Logo -->
+        {% comment %}
+	<div class="row">
+	          <div class="col-md-4">
+	          <img src="{% static 'dist/img/NecLogo.jpeg' %}" alt="NecLogo" class="brand-image img-circle elevation-3"
+	              style="opacity: .8" height="100px" width="100px">
+	          </div>
+	              <div class="col-md-8" background-color="black">
+	                <h2>Nepal Engineering College</h2>
+	                <font color="red"><h5> Student Management System for CSE Department</h5></span>
+	            </div></div>
+	
+	
+	
+	    <img src="{% static 'dist/img/nec.jpg'%}" style="width: 100%;
+	    height: auto;" alt="Necbackground" >
+{% endcomment %}
+
+<div class="login-box">
+  <div class="login-logo">
+   {% comment %}
+	 <a href="{% url 'login' %}"><b>Student </b>Management System for CSE Department NEC</a>
+{% endcomment %}
+ </div>
+<!-- /.login-logo -->
+  <div class="card">
+      <div class="card-body login-card-body">
+          {% comment %}
+	<p class="login-box-msg">Sign in to Student Management System</p>
+{% endcomment %}
+    
+          <form action="{% url 'doLogin' %}" method="POST">
+          {% csrf_token %}
+            <div class="input-group mb-3">
+              <input type="email" class="form-control" placeholder="Email" name="email">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-envelope"></span>
+                </div>
+              </div>
+            </div>
+            <div class="input-group mb-3">
+              <input type="password" class="form-control" placeholder="Password" name="password">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-lock"></span>
+                </div>
+              </div>
+            </div>
+    
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+              </div>
+    
+              {% comment %} <div class="col-12 text-center">
+                <a href="{% url 'password_reset' %}">Reset Password</a>
+              </div>  {% endcomment %}
+    
+              {% comment %} Display Messages {% endcomment %}
+              {% if messages %}
+              <div class="col-12">
+                {% for message in messages %}
+                  {% if message.tags == "error" %}
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert" style="margin-top: 10px;">
+                      {{ message }}
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              </div>
+              {% endif %}
+    
+              <!-- /.col -->
+
+            </div>
+          </body>
+          </form>
+  </div>
+</div>
+<!-- /.login-box -->
+
+{% comment %}
+	<footer class="main-footer">
+	  <div class="text-center"><font color="black"><h3>A special Thanks to our project supervisior Associate.Prof,Mr.Dinesh Dangol.</h3></div>
+	      <div class="text-center"><font color="red"><strong>Copyright &copy; {% now "Y" %}, CSE Department, <a href="https://nec.edu.np">Nepal Engineering College</a>, <b>Pokhara University</b>.</strong> 
+	        All rights reserved.</div>
+	    </footer>
+{% endcomment %}
+{% endblock %}

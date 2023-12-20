@@ -1,0 +1,368 @@
+{% load static %} 
+
+	
+	{% block content %}
+
+    
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Student management System || CSE Department</title>
+<link  rel="stylesheet" href="/static/dist/css/bootstrap.min.css"/>
+ <link  rel="stylesheet" href="/static/dist/css/bootstrap-theme.min.css"/>    
+ <link rel="stylesheet" href="/static/dist/css/main.css">
+ <link  rel="stylesheet" href="/static/dist/css/font.css">
+ <script src="/static/dist/js/jsindex1/jquery.js" type="text/javascript"></script>
+
+  <script src="/static/dist/js/jsindex1/bootstrap.min.js"  type="text/javascript"></script>
+ 	{% comment %}
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+	
+{% endcomment %}
+ {% comment %}
+	 manually added
+{% endcomment %}
+<!-- Google Font: Source Sans Pro -->
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+
+</head>
+
+<body>
+<div class="header">
+<div class="row">
+<div class="col-lg-6">
+<span class="logo">Nepal Engineering College</span></div>
+<Span classs="logo"><span style ="color:red"><h4>Department of Computer Science and Engineering (CSE)</h4></span>
+<div class="col-md-2 col-md-offset-4">
+<a href="#" class="pull-right btn sub1" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>&nbsp;<span class="title1"><b>LogIn </b></span></a></div>
+
+<p style="text-align:center;"><img src="{% static 'dist/img/bg2.jpg'%}"></p>
+{% comment %}
+	<p style="text-align:right;"><img src="{% static 'dist/img/bg.gif'%}" ></p>
+{% endcomment %}
+
+
+{% comment %}
+	<img src="{% static 'dist/img/nec.jpg'%}" style="width:100%;
+		    height: auto;" alt="Necbackground" >
+{% endcomment %}
+<!--sign in modal start-->
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content title1">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title title1"><span style="color:orange">Admin,Teacher and Student LogIn Panel</span></h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" action="{% url 'doLogin' %}" method="POST">
+          {% csrf_token %}
+<fieldset>
+
+
+
+	<!-- Text input-->
+	<div class="form-group">
+	  <label class="col-md-3 control-label" for="email"></label>  
+	  <div class="col-md-6">
+	  <input id="email" name="email" placeholder="Enter your email-id" class="form-control input-md" type="email">
+	    
+	  </div>
+	</div>
+	
+	
+	<!-- Password input-->
+	<div class="form-group">
+	  <label class="col-md-3 control-label" for="password"></label>
+	  <div class="col-md-6">
+	    <input id="password" name="password" placeholder="Enter your Password" class="form-control input-md" type="password">
+	    
+	  </div>
+	</div>
+	
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        <button type="submit" class="btn btn-primary">Log in</button>
+			</fieldset>
+	</form>
+	      </div>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+	<!--sign in modal closed-->
+	
+	</div><!--header row closed-->
+	</div>
+	
+	<div class="bg2">
+
+	<div class="row">
+	
+	<div class="col-md-7"></div>
+	{% comment %}
+	<div class="col-md-4 panel">
+{% endcomment %}
+	
+	<!-- sign in form begins   
+	  <form class="form-horizontal" name="form" action="" onSubmit="return validateForm()" method="POST">
+	<fieldset>
+	-->
+	
+	<!-- Text input
+	<div class="form-group">
+	  <label class="col-md-12 control-label" for="name"></label>  
+	  <div class="col-md-12">
+	  <input id="name" name="name" placeholder="Enter your name" class="form-control input-md" type="text">
+	    
+	  </div>
+	</div>
+	-->
+	<!-- Text input
+	<div class="form-group">
+	  <label class="col-md-12 control-label" for="gender"></label>
+	  <div class="col-md-12">
+	    <select id="gender" name="gender" placeholder="Enter your gender" class="form-control input-md" >
+	   <option value="Male">Select Gender</option>
+	  <option value="M">Male</option>
+	  <option value="F">Female</option> </select>
+	  </div>
+	</div>
+	-->
+	<!-- Text input-
+	<div class="form-group">
+	  <label class="col-md-12 control-label" for="name"></label>  
+	  <div class="col-md-12">
+	  <input id="college" name="college" placeholder="Enter your college name" class="form-control input-md" type="text">
+	    
+	  </div>
+	</div>
+-->
+	
+	<!-- Text input
+	<div class="form-group">
+	  <label class="col-md-12 control-label title1" for="email"></label>
+	  <div class="col-md-12">
+	    <input id="email" name="email" placeholder="Enter your email-id" class="form-control input-md" type="email">
+	    
+	  </div>
+	</div>
+	-->
+	<!-- Text input
+	<div class="form-group">-->
+	  <!--<label class="col-md-12 control-label" for="mob"></label>  
+	  <div class="col-md-12">
+	  <input id="mob" name="mob" placeholder="Enter your mobile number" class="form-control input-md" type="number<14">
+	    
+	  </div>
+	</div>
+-->
+	
+	<!-- Text input
+	<div class="form-group">
+	  <label class="col-md-12 control-label" for="password"></label>
+	  <div class="col-md-12">
+	    <input id="password" name="password" placeholder="Enter your password" class="form-control input-md" type="password">
+	    
+	  </div>
+	</div>
+	
+	<div class="form-group">
+	  <label class="col-md-12control-label" for="cpassword"></label>
+	  <div class="col-md-12">
+	    <input id="cpassword" name="cpassword" placeholder="Conform Password" class="form-control input-md" type="password">
+	    
+	  </div>
+	</div>
+  -->
+	<!-- Button 
+	<div class="form-group">
+	  <label class="col-md-12 control-label" for=""></label>
+	  <div class="col-md-12"> 
+	    <input  type="submit" class="sub" value="sign up" class="btn btn-primary"/>
+	  </div>
+	</div>
+	-->
+	</fieldset>
+	</form>
+	</div><!--col-md-6 end-->
+	</div></div>
+	</div><!--container end-->
+
+
+<!--Footer start-->
+<div class="row footer">
+<div class="col-md-3 box">
+<a href="http://www.nec.edu.np" target="_blank"><span style="color:yellow">About us</a>
+</div>
+<div class="col-md-3 box">
+<a href="{% url 'doLogin' %}" data-toggle="modal" data-target="#doLogin"><span style="color:yellow">{% comment %}
+	Admin Login
+{% endcomment %}</a></div>
+<div class="col-md-3 box">
+<a href="#" data-toggle="modal" data-target="#developers"><span style="color:yellow">About Team Members</a>
+</div>
+{% comment %}
+	<div class="col-md-3 box">
+	<a href="feedback.php" target="_blank">Feedback</a></div></div>
+{% endcomment %}
+<!-- Modal For Developers-->
+<div class="modal fade title1" id="developers">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" style="font-family:'typo' "><span style="color:orange">Team Members</span></h4>
+      </div>
+      <div class="modal-body">
+        <p>
+		<div class="row">
+		<div class="col-md-4">
+		 <img src="/static/dist/img\Yuvrai.jpg" width=100 height=100 alt="Yuvraj Kumar Mahato" class="img-rounded">
+		 </div>
+		 <div class="col-md-5">
+		<a href="http://www.facebook.com/yuvraj.kushwaha.9659/" style="color:#202020; font-family:'typo' ; font-size:18px" title="Find on Facebook">Yuvraj Kumar Mahato</a>
+		<h4 style="color:#202020; font-family:'typo' ;font-size:16px" class="title1">BE in Computer</h4>
+		<h4 style="font-family:'typo' ">Nepal Engineering College Changunaryan,Bhaktapur</h4></div></div>
+		</p>
+      </div>
+      <div class="modal-body">
+        <p>
+		<div class="row">
+		<div class="col-md-4">
+		 <img src="static/dist/img/lalit.jpg" width=100 height=100 alt="Lalit Kumar Yadav" class="img-rounded">
+		 </div>
+		 <div class="col-md-5">
+		<a href="https://www.facebook.com/profile.php?id=100042597202892" style="color:#202020; font-family:'typo' ; font-size:18px" title="Find on Facebook">Lalit Kumar Yadav</a>
+		<h4 style="color:#202020; font-family:'typo' ;font-size:16px" class="title1">BE in Computer</h4>
+		<h4 style="font-family:'typo' ">Nepal Engineering College Changunaryan,Bhaktapur</h4></div></div>
+		</p>
+      </div>
+      <div class="modal-body">
+        <p>
+		<div class="row">
+		<div class="col-md-4">
+		 <img src="/static/dist/img/keshab.jpg" width=100 height=100 alt="Keshab Deo" class="img-rounded">
+		 </div>
+		 <div class="col-md-5">
+		<a href="https://www.facebook.com/keshab.deo" style="color:#202020; font-family:'typo' ; font-size:18px" title="Find on Facebook">Keshab Deo</a>
+		
+    <h4 style="color:#202020; font-family:'typo' ;font-size:16px" class="title1">BE in Computer</h4>
+		<h4 style="font-family:'typo' ">Nepal Engineering College Changunaryan,Bhaktapur</h4></div></div>
+		</p>
+      </div>
+      
+    
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!--Modal for admin login-->
+	
+	 <div class="modal fade" id="login">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title"><span style="color:orange;font-family:'typo' ">LOGIN</span></h4>
+      </div>
+      <div class="modal-body title1">
+<div class="row">
+<div class="col-md-3"></div>
+<div class="col-md-6">
+  <form role="form" method="post" action="{% url 'doLogin' %}">
+<div class="form-group">
+	<input type="text" name="email" maxlength="20"  placeholder="Email" class="form-control"/> 
+	</div>
+	<div class="form-group">
+	<input type="password" name="password" maxlength="15" placeholder="Password" class="form-control"/>
+	</div>
+	<div class="form-group" align="center">
+	<input type="submit" name="login" value="Login" class="btn btn-primary" />
+	</div>
+</form>
+</div><div class="col-md-3">
+    </div></div></div>
+      </div>
+
+{% comment %}
+	Manually added for log in
+{% endcomment %}
+
+      {% comment %} <div class="col-12 text-center">
+        <a href="{% url 'password_reset' %}">Reset Password</a>
+      </div>  {% endcomment %}
+
+      {% comment %} Display Messages {% endcomment %}
+      <form action="{% url 'doLogin' %}" method="POST">
+        {% csrf_token %}
+
+        <div class="input-group mb-3">
+          <input type="email" class="form-control" placeholder="Email" name="email">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="password" class="form-control" placeholder="Password" name="password">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+          </div>
+
+
+      {% if messages %}
+      <div class="col-12">
+        {% for message in messages %}
+          {% if message.tags == "error" %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert" style="margin-top: 10px;">
+              {{ message }}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      <!-- /.col -->
+
+    </div>
+  </body>
+  </form>
+
+
+
+
+
+
+
+      <!--<div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>-->
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!--footer end-->
+
+	  <div class="text-center"><font color="black"><h3>A special Thanks to our project supervisior Associate.Prof,Mr.Dinesh Dangol.</h3></div>
+	      <div class="text-center"><font color="red"><strong>Copyright &copy; {% now "Y" %}, CSE Department, <a href="https://nec.edu.np">Nepal Engineering College</a>, <b>Pokhara University</b>.</strong> 
+	        All rights reserved.</div>
+	    </footer>
+
+</body>
+</html>
+{% endblock %}
